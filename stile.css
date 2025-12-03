@@ -1,0 +1,161 @@
+/* ----------------- Impostazioni generali ----------------- */
+body 
+{
+	margin: 0; /* Rimuove i margini predefiniti del browser */
+	padding: 0; /* Rimuove gli spazi interni predefiniti del browser */
+	font-family: 'Arial'; /* Imposta il tipo di font che tutta la pagina */
+	background-color: #f0f4f3; /* Imposta il colore dello sfondo per tutta la pagina */
+	color: #333333; /* Imposta il colore che il testo */
+	line-height: 1.6; /* Imposta l'altezza dell'interlinea */
+}
+
+/* ----------------- Intestazione ----------------- */
+header 
+{
+    background-color: #2e6f3e;
+    color: white;
+    padding: 10px 10px;
+    text-align: center; /* Decide dove visualizzare il testo */
+    box-shadow: 0 10px 5px rgba(0,0,0,0.08); /* Inserisce l'ombreggiatura sotto il box */
+	display: flex; /* Fa si che l'immagine è il titolo siano allineati sulla stessa riga */
+	justify-content: center; /* Allinea tutto il contenuto al centro */
+	gap: 20px; /* Inserisce uno spazio fra l'immagine e il titolo */
+}
+
+.header-img 
+{
+    width: 80px;
+    height: auto;
+    border-radius: 40%;
+    object-fit: cover; /* Permette all’immagine di adattarsi alla forma circolare senza perdere qualità, riempiendo lo spazio nel modo più uniforme possibile */
+}
+/* ----------------- Titoli delle sezioni ----------------- */
+h2 
+{
+    margin-top: 30px;
+    color: #2e6f3e;
+    font-size: 22px; /* Indica la dimensione del testo */
+    border-bottom: 2px solid #4caf50; /* Inserisce una linea al di sotto il titolo */
+    display: inline-block; /* Indica quanto deve essere lunga la linea sotto il titolo */
+    padding-bottom: 5px; 
+}
+
+/* ----------------- Sezioni azienda e sostenibilità ----------------- */
+section.azienda, section.sostenibilita /* Mettendo la virgola fra due elementi e possibile condividere le stesse scelte stilistiche */
+{
+    margin: 40px 20px;
+    padding: 30px 20px;
+	overflow-wrap: break-word; /* Imposta l'andata a capo del testo alla fine del box */
+    background-color: #ffffff;
+    border-radius: 12px; /* Arrotonda i bordi del box */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease; /* Imposta la durata dell'animazione sopra l'elemento */
+}
+
+/* ----------------- Effetto degli Hover sulle sezioni ----------------- */
+section.azienda:hover, section.sostenibilita:hover 
+{
+    transform: translateY(-5px); /* Inserisce un'animazione verso l'alto quando il mouse si trova sopra l'elemonto */
+}
+
+/* ----------------- Impostaizoni del pulsante download ----------------- */
+.download-wrapper /* Facilità l'impostazione dell'elemento */
+{
+    display: flex; /* Imposta il contentuno del contenitore flessibile */
+    justify-content: center; /* Allinea il bottone download al centro del box */
+    margin-top: 20px;
+}
+
+.btn-download 
+{
+    display: inline-block; /* Imposta l'allineamento dell'elemento in base ai margini e al padding */
+}
+
+/* ----------------- Collegamento pulsante download ----------------- */
+a.btn-download 
+{
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    padding: 14px 22px;
+    text-decoration: none; /* Rimuove la formattazione */
+    border-radius: 8px;
+    font-weight: 600; /* Imposta il contenuto in grassetto */
+    transition: all 0.3s ease;
+}
+
+/* ----------------- Hover sul pulsante download ----------------- */
+a.btn-download:hover 
+{
+    background-color: #45a049;
+    transform: scale(1.05); /* Ingrandisce il pulsante del download qunado passiamo sopra l'elemento */
+}
+
+/* ----------------- Piè di pagina ----------------- */
+footer 
+{
+    text-align: center;
+    font-size: 0.9em;
+    color: #777777;
+    padding: 20px;
+}
+
+/* ----------------- Responsive per dispositivi mobili ----------------- */
+@media (max-width: 900px) /* Tutte le regole qui presenti si attivano quando trovano la larghezza dello schermo minore o uguale a 900 pixel quindi tutti gli smartphone e tablet */
+{
+    body 
+	{
+        padding: 0 10px; /* Riduce il padding laterale per far si che nella visualizzazione mobile i contenuti non siano troppo distanti */
+    }
+
+    section.azienda , section.sostenibilita 
+	{
+        margin: 20px 0; /* Riduce i margini sopra e sotto per avere uno scroll più fluido su smartphone o tablet */
+        padding: 20px 15px; /* Riduce gli spazi interni cosi da avere una visione migliore dei box */
+    }
+
+    section.azienda p, section.sostenibilita p 
+	{
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 0;
+    }
+
+    h2 
+	{
+        font-size: 20px;
+    }
+
+    p 
+	{
+        font-size: 14px;
+    }
+	
+    header 
+	{
+        flex-direction: column; /* Dispone gli elementi dell’intestazione immagine e titolo uno sopra l’altro, così da adattarsi meglio agli schermi piccoli. */
+        align-items: center; /* Allinea al centro, in senso orizzontale, gli elementi presenti nell’intestazione quando sono disposti in colonna. */
+        text-align: center; /* Centra il testo del titolo all’interno dell’intestazione, migliorandone la leggibilità nella visualizzazione su schermi piccoli. */
+    }
+	
+    header h1 
+	{
+        font-size: 20px;
+    }
+
+    footer 
+	{
+        font-size: 0.8em;
+        line-height: 1.3;
+        padding: 10px 20px;
+    }
+
+/* ----------------- Pulsante centrato e più grande su mobile ----------------- */
+    a.btn-download 
+	{
+        display: block; /* Imposta una larghezza specifica che l'elemento deve seguire */
+        margin: 25px auto 0 auto;
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+}
